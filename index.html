@@ -691,23 +691,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="row">          
             <div class="col-lg-9 col-md-9 col-xs-12">
               <div class="contact-block">
-<?php 
-if ($_POST["email"]<>'') { 
-    $ToEmail = 'sharadpanot5@gmail.com'; 
-    $EmailSubject = 'Site contact form'; 
-    $mailheader = "From: ".$_POST["email"]."\r\n"; 
-    $mailheader .= "Reply-To: ".$_POST["email"]."\r\n"; 
-    $mailheader .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-    $MESSAGE_BODY = "Name: ".$_POST["name"].""; 
-    $MESSAGE_BODY .= "Email: ".$_POST["email"].""; 
-    $MESSAGE_BODY .= "Message: ".nl2br($_POST["message"]).""; 
-    mail($ToEmail, $EmailSubject, $MESSAGE_BODY, $mailheader) or die ("Failure"); 
-?> 
-<h4 style="color: green;text-align: center;">Message sent successfully...Thank You!!</h4>
-<?php 
-} else { 
-?> 
-                <form name="contactform" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+
+                <form name="contactform" method="post" action="">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -739,9 +724,7 @@ if ($_POST["email"]<>'') {
                     </div>
                   </div>            
                 </form>
-<?php 
-}; 
-?>
+
               </div>
             </div>
             <div class="col-lg-3 col-md-3 col-xs-12">
